@@ -38,12 +38,15 @@ func run(direction: float) -> void:
 	set_direction(direction)
 	set_animation("run")
 
-func jump() -> void:
+func jump(direction: float) -> void:
+	if direction != 0.0:
+		set_direction(direction)
+		
 	set_animation("jump")
 
 func handle_animation(animation: String, direction: float, is_on_floor: bool) -> void:
 	if not is_on_floor:
-		jump()
+		jump(direction)
 		return
 
 	match animation:

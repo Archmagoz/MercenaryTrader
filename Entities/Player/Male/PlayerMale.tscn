@@ -722,14 +722,13 @@ script = ExtResource("1_ye07v")
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xmc8t")
-animation = &"attack"
+animation = &"idle"
 
 [node name="Hair" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7yw41")
-animation = &"attack"
+animation = &"idle"
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 11)
 shape = SubResource("CapsuleShape2D_7yw41")
 
