@@ -1,0 +1,18 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Mercenary Trader"
+run/main_scene="uid://be8ci3xyc3m05"
+config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="uid://dgiqmb34gvdj5"
+config/macos_native_icon="res://icon.ico"
+config/windows_native_icon="res://icon.ico"
