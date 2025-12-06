@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cli0cfddfbxtj"]
+
+[ext_resource type="Script" uid="uid://bijasmqqanvp8" path="res://Entities/Components/AnimationController.gd" id="1_lai2c"]
+
+[node name="AnimationController" type="Node2D"]
+script = ExtResource("1_lai2c")

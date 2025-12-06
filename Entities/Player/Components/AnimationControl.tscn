@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cli0cfddfbxtj"]
-
-[ext_resource type="Script" uid="uid://btdujfvv6f456" path="res://Entities/Player/Components/AnimationControl.gd" id="1_2y1ut"]
-
-[node name="AnimationControl" type="Node2D"]
-script = ExtResource("1_2y1ut")

@@ -1,9 +1,7 @@
 extends CharacterBody2D
 
-const JUMP_VELOCITY = -500.0
-const SPEED = 200.0
-
-@onready var animation := $AnimationControl
+@export var animation: AnimationController
+@export var speed_controller: SpeedController
 
 func _physics_process(delta: float) -> void:
 	_handle_movement(delta)
@@ -17,14 +15,14 @@ func _handle_movement(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	if Input.is_action_just_pressed("ui_accept") and on_floor:
-		velocity.y = JUMP_VELOCITY
+		velocity.y = speed_controller.jump_speed
 		target_animation = "jump"
 
 	if direction != 0:
-		velocity.x = direction * SPEED
+		velocity.x = direction * speed_controller.speed
 		target_animation = "walk"
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed_controller.speed)
 		target_animation = "idle"
 
 	animation.handle_animation(target_animation, direction, on_floor)

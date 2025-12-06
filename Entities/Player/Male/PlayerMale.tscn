@@ -1,9 +1,10 @@
-[gd_scene load_steps=98 format=3 uid="uid://bb06s8ko4g3d3"]
+[gd_scene load_steps=99 format=3 uid="uid://bb06s8ko4g3d3"]
 
-[ext_resource type="Texture2D" uid="uid://0pmnwpodf72o" path="res://Entities/Player/Male/Aseets/Body/Skin1.png" id="1_7yw41"]
-[ext_resource type="Script" uid="uid://bu2nope47x8u" path="res://Entities/Player/Components/Player.gd" id="1_ye07v"]
-[ext_resource type="Texture2D" uid="uid://b3kt2mr5sgh1q" path="res://Entities/Player/Male/Aseets/Hair/Hair1.png" id="2_hycvx"]
-[ext_resource type="PackedScene" uid="uid://cli0cfddfbxtj" path="res://Entities/Player/Components/AnimationControl.tscn" id="3_qh6lv"]
+[ext_resource type="Texture2D" uid="uid://dv4malr470tsg" path="res://Entities/Player/Male/Aseets/Body/Skin1.png" id="1_7yw41"]
+[ext_resource type="Script" uid="uid://c7lhi1oji330g" path="res://Entities/Player/Components/Player.gd" id="1_ye07v"]
+[ext_resource type="Texture2D" uid="uid://dl4838oy7v73b" path="res://Entities/Player/Male/Aseets/Hair/Hair1.png" id="2_hycvx"]
+[ext_resource type="PackedScene" uid="uid://cli0cfddfbxtj" path="res://Entities/Components/AnimationController.tscn" id="3_qh6lv"]
+[ext_resource type="PackedScene" uid="uid://biwr4q0uxk38u" path="res://Entities/Components/SpeedController.tscn" id="5_r06ws"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_miv4b"]
 atlas = ExtResource("1_7yw41")
@@ -715,10 +716,12 @@ animations = [{
 radius = 7.0
 height = 44.0
 
-[node name="PlayerMale" type="CharacterBody2D"]
+[node name="PlayerMale" type="CharacterBody2D" node_paths=PackedStringArray("animation", "speed_controller")]
 texture_filter = 1
 scale = Vector2(-1, 1)
 script = ExtResource("1_ye07v")
+animation = NodePath("AnimationController")
+speed_controller = NodePath("SpeedController")
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xmc8t")
@@ -732,4 +735,6 @@ animation = &"idle"
 position = Vector2(0, 11)
 shape = SubResource("CapsuleShape2D_7yw41")
 
-[node name="AnimationControl" parent="." instance=ExtResource("3_qh6lv")]
+[node name="AnimationController" parent="." instance=ExtResource("3_qh6lv")]
+
+[node name="SpeedController" parent="." instance=ExtResource("5_r06ws")]
