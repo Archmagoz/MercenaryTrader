@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://orq8gy0htgtq"]
+
+[ext_resource type="Texture2D" uid="uid://y34erequij5i" path="res://Level/Assets/BackgroundLayer1.png" id="1_onrn8"]
+
+[node name="Background" type="Node2D"]
+
+[node name="Parallax1" type="Parallax2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="Parallax1"]
+texture = ExtResource("1_onrn8")

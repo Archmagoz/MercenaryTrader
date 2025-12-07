@@ -1,14 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://be8ci3xyc3m05"]
+[gd_scene load_steps=4 format=3 uid="uid://be8ci3xyc3m05"]
 
 [ext_resource type="PackedScene" uid="uid://bb06s8ko4g3d3" path="res://Entities/Player/Male/PlayerMale.tscn" id="1_cj7yl"]
+[ext_resource type="PackedScene" uid="uid://orq8gy0htgtq" path="res://Level/Components/Background.tscn" id="1_yuge2"]
 [ext_resource type="PackedScene" uid="uid://du7y2fach8rhv" path="res://Level/Components/Floor.tscn" id="2_u0258"]
 
 [node name="Debug" type="Node2D"]
 
-[node name="Camera" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+[node name="Background" parent="." instance=ExtResource("1_yuge2")]
 
 [node name="Player" parent="." instance=ExtResource("1_cj7yl")]
+
+[node name="Camera" type="Camera2D" parent="Player"]
+rotation = 3.1415927
+scale = Vector2(1, -1)
+zoom = Vector2(2, 2)
+limit_left = -500
+limit_top = -500
+limit_right = 500
+limit_bottom = 160
 
 [node name="Floor" parent="." instance=ExtResource("2_u0258")]
 position = Vector2(0, 146)
