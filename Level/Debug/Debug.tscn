@@ -1,9 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://be8ci3xyc3m05"]
 
 [ext_resource type="PackedScene" uid="uid://bb06s8ko4g3d3" path="res://Entities/Player/Male/PlayerMale.tscn" id="1_cj7yl"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cj7yl"]
-size = Vector2(578, 20)
+[ext_resource type="PackedScene" uid="uid://du7y2fach8rhv" path="res://Level/Components/Floor.tscn" id="2_u0258"]
 
 [node name="Debug" type="Node2D"]
 
@@ -12,8 +10,5 @@ zoom = Vector2(2, 2)
 
 [node name="Player" parent="." instance=ExtResource("1_cj7yl")]
 
-[node name="DebugFloor" type="StaticBody2D" parent="."]
-
-[node name="Hitbox" type="CollisionShape2D" parent="DebugFloor"]
-position = Vector2(-1, 152)
-shape = SubResource("RectangleShape2D_cj7yl")
+[node name="Floor" parent="." instance=ExtResource("2_u0258")]
+position = Vector2(0, 146)

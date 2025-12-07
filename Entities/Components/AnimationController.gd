@@ -2,14 +2,12 @@ extends Node2D
 
 class_name AnimationController
 
-@onready var body  := $"../Body"
-@onready var hair  := $"../Hair"
 var current_animation := "none"
 var current_direction := 1.0
 var animateded_sprites := []
 
 func _ready() -> void:
-	animateded_sprites = [body, hair]
+	animateded_sprites = [$"../Body", $"../Hair", $"../Shirt"]
 	set_animation("idle")
 
 func set_animation(new_animation: String) -> void:
